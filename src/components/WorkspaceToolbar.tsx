@@ -209,6 +209,8 @@ export const WorkspaceToolbar: React.FC<WorkspaceToolbarProps> = ({
           <span className="hidden md:inline">Open</span>
         </button>
         <input
+          id="project-file-input"
+          name="projectFileInput"
           ref={projectInputRef}
           type="file"
           accept=".json,application/json"

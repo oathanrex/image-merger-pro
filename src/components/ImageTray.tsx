@@ -338,6 +338,8 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
                     title={isSelected ? 'Selected for batch color edits' : 'Select for batch color edits'}
                   >
                     <input
+                      id={`tray-select-image-${image.id}`}
+                      name={`traySelectImage_${image.id}`}
                       type="checkbox"
                       data-testid={`tray-select-checkbox-${index}`}
                       aria-label={`Select ${image.name} for batch edits`}
@@ -359,6 +361,8 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
                       className="flex items-center gap-1"
                     >
                       <input
+                        id={`inline-rename-${image.id}`}
+                        name={`inlineRename_${image.id}`}
                         type="text"
                         autoFocus
                         aria-label={`Rename ${image.name}`}
@@ -569,6 +573,8 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
                         </div>
                       </div>
                       <input
+                        id={`tray-rotation-${image.id}`}
+                        name={`trayRotation_${image.id}`}
                         type="range"
                         aria-label={`Free rotation angle for ${image.name}`}
                         min={0}
@@ -582,12 +588,14 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
 
                     <div>
                       <div className="mb-1 flex justify-between">
-                        <span className="text-muted">Brightness</span>
+                        <label htmlFor={`tray-brightness-${image.id}`} className="text-muted">Brightness</label>
                         <span className="font-mono tabular-nums text-foreground">
                           {image.filters.brightness}%
                         </span>
                       </div>
                       <input
+                        id={`tray-brightness-${image.id}`}
+                        name={`trayBrightness_${image.id}`}
                         type="range"
                         aria-label={`Brightness for ${image.name}`}
                         min={50}
@@ -605,12 +613,14 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
 
                     <div>
                       <div className="mb-1 flex justify-between">
-                        <span className="text-muted">Contrast</span>
+                        <label htmlFor={`tray-contrast-${image.id}`} className="text-muted">Contrast</label>
                         <span className="font-mono tabular-nums text-foreground">
                           {image.filters.contrast}%
                         </span>
                       </div>
                       <input
+                        id={`tray-contrast-${image.id}`}
+                        name={`trayContrast_${image.id}`}
                         type="range"
                         aria-label={`Contrast for ${image.name}`}
                         min={50}
@@ -628,12 +638,14 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
 
                     <div>
                       <div className="mb-1 flex justify-between">
-                        <span className="text-muted">Saturation</span>
+                        <label htmlFor={`tray-saturation-${image.id}`} className="text-muted">Saturation</label>
                         <span className="font-mono tabular-nums text-foreground">
                           {image.filters.saturation}%
                         </span>
                       </div>
                       <input
+                        id={`tray-saturation-${image.id}`}
+                        name={`traySaturation_${image.id}`}
                         type="range"
                         aria-label={`Saturation for ${image.name}`}
                         min={0}
@@ -651,12 +663,14 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
 
                     <div>
                       <div className="mb-1 flex justify-between">
-                        <span className="text-muted">Hue</span>
+                        <label htmlFor={`tray-hue-${image.id}`} className="text-muted">Hue</label>
                         <span className="font-mono tabular-nums text-foreground">
                           {hueVal > 0 ? `+${hueVal}` : hueVal}°
                         </span>
                       </div>
                       <input
+                        id={`tray-hue-${image.id}`}
+                        name={`trayHue_${image.id}`}
                         type="range"
                         aria-label={`Hue for ${image.name}`}
                         min={-180}
@@ -674,12 +688,14 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
 
                     <div>
                       <div className="mb-1 flex justify-between">
-                        <span className="text-muted">Sharpen</span>
+                        <label htmlFor={`tray-sharpen-${image.id}`} className="text-muted">Sharpen</label>
                         <span className="font-mono tabular-nums text-foreground">
                           {sharpenVal}%
                         </span>
                       </div>
                       <input
+                        id={`tray-sharpen-${image.id}`}
+                        name={`traySharpen_${image.id}`}
                         type="range"
                         aria-label={`Sharpen for ${image.name}`}
                         min={0}
@@ -696,8 +712,10 @@ export const ImageTray: React.FC<ImageTrayProps> = ({
                     </div>
 
                     <div className="flex items-center justify-between pt-0.5">
-                      <label className="flex cursor-pointer items-center gap-1.5 text-foreground">
+                      <label htmlFor={`tray-grayscale-${image.id}`} className="flex cursor-pointer items-center gap-1.5 text-foreground">
                         <input
+                          id={`tray-grayscale-${image.id}`}
+                          name={`trayGrayscale_${image.id}`}
                           type="checkbox"
                           checked={image.filters.grayscale}
                           onChange={(e) =>

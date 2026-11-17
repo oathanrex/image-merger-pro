@@ -410,6 +410,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   </label>
                   <input
                     id="auto-columns-toggle"
+                    name="autoColumns"
                     type="checkbox"
                     checked={settings.autoColumns}
                     onChange={(e) => onUpdateSettings({ autoColumns: e.target.checked }, true)}
@@ -427,6 +428,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   </div>
                   <input
                     id="columns-slider"
+                    name="columns"
                     type="range"
                     min={1}
                     max={12}
@@ -458,6 +460,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   </div>
                   <input
                     id="spacing-slider"
+                    name="spacing"
                     type="range"
                     min={0}
                     max={100}
@@ -484,6 +487,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 </div>
                 <input
                   id="padding-slider"
+                  name="padding"
                   type="range"
                   min={0}
                   max={120}
@@ -508,6 +512,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                   </label>
                   <select
                     id="scale-mode-select"
+                    name="scaleMode"
                     value={settings.scaleMode}
                     onChange={(e) =>
                       onUpdateSettings({ scaleMode: e.target.value as ScaleMode }, true)
@@ -535,6 +540,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                     </div>
                     <input
                       id="custom-scale-slider"
+                      name="customScale"
                       type="range"
                       min={10}
                       max={200}
@@ -560,6 +566,8 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
               </span>
               <div className="flex items-center gap-2.5">
                 <input
+                  id="canvas-bg-color"
+                  name="bgColor"
                   type="color"
                   aria-label="Background color"
                   disabled={settings.transparentBg}
@@ -586,9 +594,11 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 </div>
               </div>
 
-              <label className="flex cursor-pointer items-center justify-between text-xs text-foreground">
+              <label htmlFor="transparent-bg-toggle" className="flex cursor-pointer items-center justify-between text-xs text-foreground">
                 <span>Transparent Canvas (PNG / WebP)</span>
                 <input
+                  id="transparent-bg-toggle"
+                  name="transparentBg"
                   type="checkbox"
                   checked={settings.transparentBg}
                   onChange={(e) => {
@@ -624,6 +634,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 <div className="flex items-center gap-2.5">
                   <input
                     id="border-width-slider"
+                    name="borderWidth"
                     type="range"
                     min={0}
                     max={24}
@@ -634,6 +645,8 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                     className="studio-range flex-1"
                   />
                   <input
+                    id="border-color-picker"
+                    name="borderColor"
                     type="color"
                     aria-label="Border color"
                     value={settings.borderColor}
@@ -657,6 +670,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 </div>
                 <input
                   id="corner-radius-slider"
+                  name="cornerRadius"
                   type="range"
                   min={0}
                   max={64}
@@ -682,6 +696,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 </div>
                 <input
                   id="shadow-blur-slider"
+                  name="shadowBlur"
                   type="range"
                   min={0}
                   max={40}
@@ -696,11 +711,13 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
 
             {/* Text Watermark / Stamp */}
             <div className="space-y-3 pt-4">
-              <label className="flex cursor-pointer items-center justify-between">
+              <label htmlFor="watermark-enabled-toggle" className="flex cursor-pointer items-center justify-between">
                 <span className="text-xs font-semibold text-foreground">
                   Text Stamp / Watermark
                 </span>
                 <input
+                  id="watermark-enabled-toggle"
+                  name="watermarkEnabled"
                   type="checkbox"
                   checked={settings.textStamp.enabled}
                   onChange={(e) =>
@@ -716,6 +733,8 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
               {settings.textStamp.enabled && (
                 <div className="space-y-3 pt-1">
                   <input
+                    id="watermark-text-input"
+                    name="watermarkText"
                     type="text"
                     aria-label="Watermark text"
                     value={settings.textStamp.text}
@@ -739,6 +758,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                       </label>
                       <select
                         id="stamp-position"
+                        name="watermarkPosition"
                         value={settings.textStamp.position}
                         onChange={(e) =>
                           onUpdateSettings(
@@ -766,6 +786,8 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                       </span>
                       <div className="flex items-center gap-2">
                         <input
+                          id="watermark-color-picker"
+                          name="watermarkColor"
                           type="color"
                           aria-label="Watermark color"
                           value={settings.textStamp.color}
@@ -794,6 +816,8 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                       </span>
                     </div>
                     <input
+                      id="watermark-font-size-slider"
+                      name="watermarkFontSize"
                       type="range"
                       aria-label="Watermark font size"
                       min={12}
@@ -822,6 +846,8 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                       </span>
                     </div>
                     <input
+                      id="watermark-opacity-slider"
+                      name="watermarkOpacity"
                       type="range"
                       aria-label="Watermark opacity"
                       min={10}
@@ -912,6 +938,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 </div>
                 <input
                   id="quality-slider"
+                  name="quality"
                   type="range"
                   min={10}
                   max={100}
@@ -933,6 +960,7 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
                 </label>
                 <input
                   id="filename-prefix"
+                  name="filenamePrefix"
                   type="text"
                   value={settings.filenamePrefix}
                   onChange={(e) =>
@@ -974,6 +1002,8 @@ export const ControlSidebar: React.FC<ControlSidebarProps> = ({
               </span>
               <form onSubmit={handleCreatePreset} className="flex gap-1.5">
                 <input
+                  id="preset-name-input"
+                  name="presetName"
                   type="text"
                   value={presetName}
                   onChange={(e) => setPresetName(e.target.value)}

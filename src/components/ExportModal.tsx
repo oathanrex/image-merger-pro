@@ -344,6 +344,8 @@ export const ExportModal: React.FC<ExportModalProps> = ({
 
           <form onSubmit={handleCreatePreset} className="flex flex-wrap items-center gap-2">
             <input
+              id="export-preset-name-input"
+              name="exportPresetName"
               type="text"
               data-testid="export-preset-name-input"
               aria-label="New export preset name"
@@ -352,8 +354,10 @@ export const ExportModal: React.FC<ExportModalProps> = ({
               onChange={(e) => setPresetName(e.target.value)}
               className="min-w-[180px] flex-1 rounded-control border border-border bg-well px-3 py-1.5 text-xs text-foreground focus:border-primary focus:outline-none"
             />
-            <label className="inline-flex cursor-pointer items-center gap-1.5 text-[11px] text-muted">
+            <label htmlFor="include-kb-cap-checkbox" className="inline-flex cursor-pointer items-center gap-1.5 text-[11px] text-muted">
               <input
+                id="include-kb-cap-checkbox"
+                name="includeKbCap"
                 type="checkbox"
                 checked={includeKbCapInPreset}
                 onChange={(e) => setIncludeKbCapInPreset(e.target.checked)}
@@ -385,6 +389,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
               </label>
               <select
                 id="export-format-select"
+                name="exportFormat"
                 data-testid="export-format-select"
                 value={settings.format}
                 onChange={(e) => {
@@ -414,6 +419,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
               </label>
               <input
                 id="export-prefix-input"
+                name="exportPrefix"
                 data-testid="export-prefix-input"
                 type="text"
                 value={settings.filenamePrefix}
@@ -440,6 +446,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
               </div>
               <input
                 id="export-quality-slider"
+                name="exportQuality"
                 data-testid="export-quality-slider"
                 type="range"
                 min={10}
@@ -506,6 +513,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
                   </label>
                   <input
                     id="export-max-width"
+                    name="exportMaxWidth"
                     data-testid="export-max-width"
                     type="number"
                     min={64}
@@ -528,6 +536,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
                   </label>
                   <input
                     id="export-max-height"
+                    name="exportMaxHeight"
                     data-testid="export-max-height"
                     type="number"
                     min={64}
@@ -556,6 +565,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
                 </div>
                 <input
                   id="export-custom-scale"
+                  name="exportCustomScale"
                   data-testid="export-custom-scale"
                   type="range"
                   min={10}
@@ -676,6 +686,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
             </label>
             <input
               id="target-kb-input"
+              name="targetKb"
               type="number"
               min={10}
               max={10000}
@@ -686,6 +697,8 @@ export const ExportModal: React.FC<ExportModalProps> = ({
             <span className="text-xs font-medium text-muted">KB max</span>
 
             <select
+              id="target-compression-format"
+              name="targetCompressionFormat"
               aria-label="Target compression format"
               value={targetFormat}
               onChange={(e) => setTargetFormat(e.target.value as 'jpeg' | 'webp')}

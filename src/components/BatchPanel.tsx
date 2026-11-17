@@ -223,6 +223,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           </div>
           <input
             id="batch-brightness-slider"
+            name="batchBrightness"
             data-testid="batch-brightness-slider"
             type="range"
             aria-label="Batch brightness"
@@ -248,6 +249,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           </div>
           <input
             id="batch-contrast-slider"
+            name="batchContrast"
             data-testid="batch-contrast-slider"
             type="range"
             aria-label="Batch contrast"
@@ -273,6 +275,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           </div>
           <input
             id="batch-saturation-slider"
+            name="batchSaturation"
             data-testid="batch-saturation-slider"
             type="range"
             aria-label="Batch saturation"
@@ -315,6 +318,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           </div>
           <input
             id="batch-hue-slider"
+            name="batchHue"
             data-testid="batch-hue-slider"
             type="range"
             aria-label="Batch hue shift"
@@ -358,6 +362,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           </div>
           <input
             id="batch-sharpen-slider"
+            name="batchSharpen"
             data-testid="batch-sharpen-slider"
             type="range"
             aria-label="Batch sharpen intensity"
@@ -375,9 +380,11 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           />
         </div>
 
-        <label className="flex cursor-pointer items-center justify-between text-xs text-foreground">
+        <label htmlFor="batch-grayscale-toggle" className="flex cursor-pointer items-center justify-between text-xs text-foreground">
           <span>Grayscale</span>
           <input
+            id="batch-grayscale-toggle"
+            name="batchGrayscale"
             type="checkbox"
             disabled={disabled}
             checked={filters.grayscale}
@@ -431,6 +438,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           </label>
           <input
             id="batch-rename-pattern"
+            name="batchRenamePattern"
             data-testid="batch-rename-pattern-input"
             type="text"
             value={renameOptions.pattern}
@@ -449,6 +457,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
             </label>
             <input
               id="rename-start"
+              name="renameStart"
               data-testid="batch-rename-start-input"
               type="number"
               min={0}
@@ -469,6 +478,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
             </label>
             <input
               id="rename-step"
+              name="renameStep"
               type="number"
               min={1}
               max={100}
@@ -488,6 +498,7 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
             </label>
             <select
               id="rename-pad"
+              name="renamePad"
               value={renameOptions.zeroPad}
               onChange={(e) =>
                 setRenameOptions((prev) => ({ ...prev, zeroPad: Number(e.target.value) }))
@@ -504,6 +515,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
 
         <div className="grid grid-cols-2 gap-2 items-center">
           <select
+            id="batch-rename-case-mode"
+            name="caseMode"
             aria-label="Filename case style"
             value={renameOptions.caseMode}
             onChange={(e) =>
@@ -521,8 +534,10 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
             <option value="snake">snake_case</option>
           </select>
 
-          <label className="flex cursor-pointer items-center justify-end gap-1.5 text-xs text-foreground">
+          <label htmlFor="batch-rename-keep-ext" className="flex cursor-pointer items-center justify-end gap-1.5 text-xs text-foreground">
             <input
+              id="batch-rename-keep-ext"
+              name="preserveExtension"
               type="checkbox"
               checked={renameOptions.preserveExtension}
               onChange={(e) =>
@@ -579,6 +594,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
 
         <div className="grid grid-cols-2 gap-2">
           <select
+            id="batch-resize-mode-select"
+            name="batchResizeMode"
             aria-label="Batch resize mode"
             value={resizeMode}
             onChange={(e) => {
@@ -595,6 +612,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           </select>
 
           <input
+            id="batch-resize-value-input"
+            name="batchResizeValue"
             type="number"
             aria-label="Batch resize target value"
             min={resizeMode === 'percent' ? 5 : 32}
@@ -624,6 +643,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
 
         <div className="flex gap-1.5">
           <select
+            id="batch-crop-preset-select"
+            name="batchCropPreset"
             aria-label="Batch focal crop aspect ratio"
             value={cropPreset}
             onChange={(e) => setCropPreset(e.target.value as CropAspectPreset)}
@@ -695,6 +716,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
         </div>
 
         <input
+          id="batch-watermark-text-input"
+          name="batchWatermarkText"
           type="text"
           aria-label="Batch watermark text"
           value={watermark.text}
@@ -705,6 +728,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
 
         <div className="grid grid-cols-2 gap-2">
           <select
+            id="batch-watermark-position-select"
+            name="batchWatermarkPosition"
             aria-label="Batch watermark position"
             value={watermark.position}
             onChange={(e) =>
@@ -725,6 +750,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
 
           <div className="flex items-center gap-2">
             <input
+              id="batch-watermark-color-picker"
+              name="batchWatermarkColor"
               type="color"
               aria-label="Batch watermark color"
               value={watermark.color}
@@ -739,6 +766,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           <div>
             <span className="mb-1 block text-[11px] text-muted">Size {watermark.fontSize}px</span>
             <input
+              id="batch-watermark-font-size-slider"
+              name="batchWatermarkFontSize"
               type="range"
               aria-label="Batch watermark font size"
               min={14}
@@ -753,6 +782,8 @@ export const BatchPanel: React.FC<BatchPanelProps> = ({
           <div>
             <span className="mb-1 block text-[11px] text-muted">Opacity {watermark.opacity}%</span>
             <input
+              id="batch-watermark-opacity-slider"
+              name="batchWatermarkOpacity"
               type="range"
               aria-label="Batch watermark opacity"
               min={15}

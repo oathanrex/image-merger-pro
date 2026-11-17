@@ -136,6 +136,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
                   </div>
                   <input
                     id="layer-x-slider"
+                    name="layerX"
                     type="range"
                     min={-800}
                     max={800}
@@ -158,6 +159,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
                   </div>
                   <input
                     id="layer-y-slider"
+                    name="layerY"
                     type="range"
                     min={-800}
                     max={800}
@@ -180,6 +182,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
                   </div>
                   <input
                     id="layer-scale-slider"
+                    name="layerScale"
                     type="range"
                     min={10}
                     max={250}
@@ -205,6 +208,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
                   </div>
                   <input
                     id="layer-rotation-slider"
+                    name="layerRotation"
                     type="range"
                     min={0}
                     max={360}
@@ -232,6 +236,7 @@ export const LayerPanel: React.FC<LayerPanelProps> = ({
                 </div>
                 <input
                   id="layer-opacity-slider"
+                  name="layerOpacity"
                   type="range"
                   min={0}
                   max={100}

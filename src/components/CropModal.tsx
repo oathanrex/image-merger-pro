@@ -493,8 +493,10 @@ export const CropModal: React.FC<CropModalProps> = ({ image, onClose, onApplyCro
 
         {/* Custom Aspect Ratio Inputs */}
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted">
-          <span className="font-medium text-foreground">Custom Ratio:</span>
+          <label htmlFor="custom-ratio-w" className="font-medium text-foreground">Custom Ratio:</label>
           <input
+            id="custom-ratio-w"
+            name="customRatioW"
             type="number"
             aria-label="Custom ratio width"
             min={1}
@@ -505,6 +507,8 @@ export const CropModal: React.FC<CropModalProps> = ({ image, onClose, onApplyCro
           />
           <span aria-hidden="true">:</span>
           <input
+            id="custom-ratio-h"
+            name="customRatioH"
             type="number"
             aria-label="Custom ratio height"
             min={1}
@@ -553,6 +557,7 @@ export const CropModal: React.FC<CropModalProps> = ({ image, onClose, onApplyCro
               </label>
               <input
                 id={`crop-${field.key}`}
+                name={`crop_${field.key}`}
                 type="number"
                 min={field.key === 'width' || field.key === 'height' ? 16 : 0}
                 max={field.max}

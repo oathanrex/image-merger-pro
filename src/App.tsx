@@ -1461,6 +1461,8 @@ export default function App() {
 
         {/* Hidden shared file input */}
         <input
+          id="file-upload-input"
+          name="fileUploadInput"
           ref={fileInputRef}
           type="file"
           accept="image/*"
