@@ -2,17 +2,14 @@
 
 > **Precision client-side image stitching, grid collage creator, overlay compositor, and size-optimized export studio.** Everything executes directly in your browser using HTML5 Canvas — zero server uploads, 100% private, no watermarks, and free forever.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-168f67?style=for-the-badge&logo=github)](https://oathanrex.github.io/image-merger-pro/)
-[![Built With React 19](https://img.shields.io/badge/React-19.0.1-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-7.0.2-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-8.3.0-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38b2ac?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Live WebApp](https://img.shields.io/badge/Live_WebApp-GitHub_Pages-168f67?style=for-the-badge&logo=github)](https://oathanrex.github.io/image-merger-pro/)
+[![Technology](https://img.shields.io/badge/Engine-HTML5_Canvas-orange?style=for-the-badge)](https://oathanrex.github.io/image-merger-pro/)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25_Client_Side-blue?style=for-the-badge)](https://oathanrex.github.io/image-merger-pro/)
 
 ---
 
 ## 🚀 Live Studio
-Access the application instantly without installation:
+Access the application directly in your web browser:
 👉 **[https://oathanrex.github.io/image-merger-pro/](https://oathanrex.github.io/image-merger-pro/)**
 
 ---
@@ -38,7 +35,7 @@ Access the application instantly without installation:
 
 ### 4. Advanced Export Engine
 * **Formats Supported**: Export to high-resolution **PNG**, size-tuned **JPEG**, modern **WebP**, or multi-page/single-sheet **PDF**.
-* **Target File Size Compressor**: Specify a strict budget in Kilobytes (e.g., `< 500 KB` or `< 1 MB`) — the engine performs automated binary search compression to find the optimal quality ceiling.
+* **Target File Size Compressor**: Specify a strict budget in Kilobytes (e.g., `< 500 KB` or `< 1 MB`) — the engine automatically calculates optimal compression.
 * **Instant Clipboard Copy**: Copy composite graphics directly to your system clipboard (`Ctrl+C`) for immediate pasting into Discord, Slack, Figma, or Word.
 * **Zero Watermarks**: Clean, studio-grade outputs with no logos or hidden artifacts.
 
@@ -63,101 +60,8 @@ Access the application instantly without installation:
 
 ---
 
-## 🏗️ Technical Architecture
-
-```
-image-merger-pro/
-├── .github/workflows/
-│   └── deploy.yml            # Automated CI/CD pipeline deploying to GitHub Pages
-├── public/
-│   ├── .nojekyll             # Bypasses Jekyll processing on GitHub Pages
-│   ├── robots.txt            # Search engine crawler permissions & directives
-│   └── sitemap.xml           # XML sitemap for SEO discovery
-├── src/
-│   ├── components/           # Modular React 19 UI components
-│   │   ├── AboutSection.tsx  # Semantic SEO & FAQ accordion component
-│   │   ├── BatchPanel.tsx    # Multi-file batch transform operations
-│   │   ├── ControlSidebar.tsx# Layout, dimension, border, and style settings
-│   │   ├── CropModal.tsx     # Aspect-ratio locked canvas cropping dialog
-│   │   ├── ExportModal.tsx   # Multi-format exporter with target KB optimizer
-│   │   ├── HeaderBar.tsx     # Responsive brand navigation
-│   │   ├── ImageTray.tsx     # Reorderable, flippable image strip
-│   │   ├── LayerPanel.tsx    # Drag-and-drop overlay layer stack
-│   │   └── PreviewViewport.tsx# Real-time hardware-accelerated canvas renderer
-│   ├── types/
-│   │   └── merger.ts         # Strictly typed interfaces and presets
-│   ├── utils/
-│   │   ├── canvasEngine.ts   # Core offscreen canvas rendering & binary compression
-│   │   ├── imageMetadata.ts  # Client-side EXIF & file metadata parser
-│   │   └── sampleGenerator.ts# Deterministic test canvas patterns
-│   ├── App.tsx               # Root state coordinator with history snapshots
-│   └── index.css             # Tailwind CSS tokens & layout utilities
-├── index.html                # Enhanced SEO meta tags & Schema.org JSON-LD
-├── package.json              # Dependencies & build scripts
-└── vite.config.ts            # Vite bundler configuration
-```
-
-### Engineering Highlights:
-* **Offscreen Canvas Rendering**: High-DPI canvas computations take place in isolated memory buffers to prevent main-thread UI jank.
-* **Target Size Binary Search**: Implements a logarithmic quality convergence algorithm that delivers optimal visual fidelity within tight KB limits.
-* **Full History Snapshots**: Deep undo/redo stack tracks layer positions, transforms, global borders, and layout switches.
-
----
-
-## 🛠️ Local Development Setup
-
-### Prerequisites
-* **Node.js**: v18.0.0 or higher
-* **npm**: v9.0.0 or higher
-
-### Installation & Run
-```bash
-# 1. Clone the repository
-git clone https://github.com/oathanrex/image-merger-pro.git
-
-# 2. Navigate to project root
-cd image-merger-pro
-
-# 3. Install dependencies
-npm install
-
-# 4. Start local development server
-npm run dev
-```
-
-Visit `http://localhost:3000` to interact with the local studio.
-
-### Testing & Production Build
-```bash
-# Typecheck TypeScript definitions
-npm run lint
-
-# Generate optimized static bundle for deployment
-npm run build
-
-# Preview production build locally
-npm run preview
-```
-
----
-
-## 📈 Search Engine Optimization (SEO) Checklist
-- [x] Schema.org `WebApplication` & `FAQPage` JSON-LD Structured Data
-- [x] OpenGraph (`og:*`) & Twitter Cards (`twitter:*`) with rich previews
-- [x] Self-referencing Canonical URL
-- [x] Optimized `<title>` with high-intent keywords: *image combiner, photo stitcher, collage studio*
-- [x] `public/robots.txt` & `public/sitemap.xml` for crawler discovery
-- [x] Semantic HTML5 headings (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`)
-- [x] High-contrast accessible color scheme adhering to WCAG 2.1 AA guidelines
-
----
-
-## 📄 License
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
----
-
-## 👤 Author
-Developed with ❤️ by **[Oathan Rex](https://github.com/oathanrex)**.
-* **GitHub**: [@oathanrex](https://github.com/oathanrex)
+## 👤 Author & Rights
+Designed and created by **[Oathan Rex](https://github.com/oathanrex)**.
+* **Live Tool**: [https://oathanrex.github.io/image-merger-pro/](https://oathanrex.github.io/image-merger-pro/)
 * **Portfolio**: [https://oathanrex.github.io](https://oathanrex.github.io)
+* **Copyright**: © 2026 Oathan Rex. All rights reserved.
