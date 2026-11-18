@@ -46,6 +46,18 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
           >
             Images
           </a>
+          <a
+            href="#about-section"
+            className="whitespace-nowrap shrink-0 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            About
+          </a>
+          <a
+            href="#faq-section"
+            className="whitespace-nowrap shrink-0 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            FAQ
+          </a>
           <button
             type="button"
             onClick={onOpenShortcuts}

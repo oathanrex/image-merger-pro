@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { AboutSection } from './components/AboutSection';
 import { ConfirmModal } from './components/ConfirmModal';
 import { ControlSidebar } from './components/ControlSidebar';
 import { CropModal } from './components/CropModal';
@@ -1586,6 +1587,8 @@ export default function App() {
             </div>
           </div>
         </div>
+
+        <AboutSection />
       </main>
 
       <footer className="border-t border-border bg-surface px-6 py-4 text-xs text-muted">
@@ -1594,6 +1597,12 @@ export default function App() {
             Image Merger Pro · Client-side HTML5 Canvas engine (images never leave your device)
           </span>
           <div className="flex items-center gap-4">
+            <a href="#about-section" className="hover:text-foreground hover:underline">
+              About
+            </a>
+            <a href="#faq-section" className="hover:text-foreground hover:underline">
+              FAQ
+            </a>
             <button
               type="button"
               onClick={() => setShortcutsOpen(true)}
@@ -1602,7 +1611,7 @@ export default function App() {
               Keyboard Shortcuts
             </button>
             <a
-              href="https://github.com/oathanrex"
+              href="https://github.com/oathanrex/image-merger-pro"
               target="_blank"
               rel="noreferrer"
               className="hover:text-foreground hover:underline"
